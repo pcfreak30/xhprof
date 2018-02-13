@@ -9,9 +9,9 @@ include(dirname(__FILE__) . '/../xhprof_lib/config.php');
 
 function getExtensionName()
 {
-    if (extension_loaded('tideways'))
+    if (extension_loaded('tideways_xhprof'))
     {
-        return 'tideways';
+        return 'tideways_xhprof';
     }elseif(extension_loaded('xhprof')) {
         return 'xhprof';
     }
