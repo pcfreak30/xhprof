@@ -54,7 +54,7 @@ $_xhprof['doprofile'] = false;
 $controlIPs = array();
 $controlIPs[] = "127.0.0.1";   // localhost, you'll want to add your own ip here
 $controlIPs[] = "::1";         // localhost IP v6
-
+$controlIPs = false;
 //$otherURLS = array();
 
 // ignore builtin functions and call_user_func* during profiling
