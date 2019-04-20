@@ -12,7 +12,7 @@ $_xhprof['namespace']  = 'myapp';
 $_xhprof['url']        = '/xhprof/xhprof_html';
 $_xhprof['getparam']   = "_profile";
 
-$wp_config = dirname( dirname( __DIR__ ) ) . '/wp-config.php');
+$wp_config = dirname( dirname( __DIR__ ) ) . '/wp-config.php';
 if ( file_exists( $wp_config ) ) {
 	include $wp_config;
 	$_xhprof['dbhost'] = DB_HOST;
