@@ -14,13 +14,13 @@ $_xhprof['getparam']   = "_profile";
 
 $wp_config = dirname( dirname( __DIR__ ) ) . '/wp-config.php';
 if ( file_exists( $wp_config ) ) {
-	include $wp_config;
-	$_xhprof['dbhost'] = DB_HOST;
-	$_xhprof['dbname'] = DB_NAME;
-	$_xhprof['dbuser'] = DB_USER;
-	$_xhprof['dbpass'] = DB_PASSWORD;
+	shell_exec('php '. escapeshellarg(__DIR__) . '/wp-db-config.php');
+	$wp_config = json_decode(file_get_contents(__DIR__.'/wp-config.json'), true);
+	$_xhprof['dbhost'] = $wp_config[0];
+	$_xhprof['dbname'] = $wp_config[1];
+	$_xhprof['dbuser'] = $wp_config[2];
+	$_xhprof['dbpass'] = $wp_config[3];
 }
-
 /*
  * MySQL/MySQLi/PDO ONLY
  * Switch to JSON for better performance and support for larger profiler data sets.
